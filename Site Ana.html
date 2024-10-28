@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/e7eab8a619.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Avançada</title>
+    <style type="text/css">
+        @media (max-width: 360px) {
+        .menu_lateral
+    {
+        display: none;}
+    }
+        @keyframes slide-in {
+            from {
+                transform: translateX(-100%);}
+            to {
+                transform: translateX(0);}
+        }
+        @keyframes slide-up {
+            from {
+            transform: translateY(-100%);}
+
+            to {
+                transform: translateY(0);}
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        header {
+            width: 100%;
+            height: 120px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header > div {
+            width: 90%;
+            height: 100px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .parte1 {
+            width: 250px;
+            height: 80px;
+            background-color: #3d4d68;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            animation: slide-in 1.5s;
+        }
+        .parte2 {
+            font-size: 20px;
+            padding: 7px;
+            border: 1px solid #ddaf4c;
+            border-radius: 20px;
+            cursor: pointer;
+            color: black;
+        }
+        .parte2 p:hover {
+            padding-bottom: 2px;
+            border-bottom: 2px solid #ddaf4c;
+        }
+        .parte3 {
+            display: flex;
+            height: 22px;
+            position: relative;
+            z-index: 1;
+            animation: slide-in 2s;
+        }
+        .parte3 p {
+            margin-left: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            color: black;
+        }
+        .parte3 p:hover {
+            padding-bottom: 2px;
+            border-bottom: 2px solid #ddaf4c;
+        }
+        .mainparte1 {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+        .mainparte1 h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 70px;
+            color: #ddaf4c;
+            text-align: center;
+            padding: 10px; 
+            background-color: rgba(249, 249, 249, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            animation: slide-in 1s;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 90%; 
+            z-index: 1;
+            animation: slide-up 1s;
+        }
+        .icon-item {
+            text-align: center;
+            margin: 20px;
+            z-index: 1;
+            animation: slide-up 1s;
+        }
+        .icon-item img {
+            width: 200px;
+            height: 200px;
+            z-index: 1;
+            animation: slide-up 1s;
+        }
+        .icon-item h2 {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+        .icon-item p {
+            font-size: 20px; 
+            margin: 5px 0;
+            }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            bottom: -100px; /* Escondido inicialmente */
+            background-color: #ddaf4c;
+            width: 100%;
+            position: relative;
+            transition: bottom 0.3s ease;
+        }
+        footer > .rodape {
+            width: 80%;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            height: 170px;
+            background-size: cover;
+            background-position: center;
+        }
+        .footer1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer h2{
+            font-size: 25px;
+            color: black;
+            margin-bottom: 10px;
+        }
+        .footer1 p{
+            margin-bottom: 8px;
+            color: rgb(79, 78, 78);
+            cursor: pointer;
+        }
+        .footer1 p a{
+            color: rgb(79, 78, 78);
+            outline: none;
+            text-decoration: none;
+        }
+
+        .footer1 p a:hover{
+            color: #fffb13;
+        }
+        .rodape.visible {
+            bottom: 0; /* Revela o footer */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="parte1">
+                <img src="D:\HTML DE VDD\logo2.jpeg" alt="logo" style="width: 100%; height: auto;">
+            </div>
+            <div class="parte2">
+                <p>Agendar consulta</p>
+            </div>
+            <div class="parte3">
+                <p>Página inicial</p>
+                <p>Tratamentos</p>
+                <p>Contato</p>
+            </div>
+        </div>
+    </header>
+    <br><br>
+    <main>
+        <div>
+            <div class="mainparte1">
+                <div>
+                    <h1>"Realce sua beleza natural <br> com nossos tratamentos de <br> estética facial personalizados."</h1>
+                </div>
+            </div>
+            <div>
+                <div class="icon-container">
+                    <div class="icon-item">
+                        <i class="fa-solid fa-star"></i>
+                        <h2>Equipamentos de alta tecnologia</h2>
+                        <p>Ciência e tecnologia aliados para oferecer os melhores resultados em procedimentos estéticos.</p>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fa-solid fa-heart"></i>
+                        <h2>Atendimento</h2>
+                        <p>O cliente é prioridade, faça seu atendimento como desejar!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br><br>
+    <footer class="rodape" id="footer">
+        <div>
+            <div class="footer1">
+                <h2>Navegação</h2>
+                <p><a href="index.html">Página Inicial</a></p>
+                <p><a href="tratamentos.html">Tratamentos</a></p>
+                <p><a href="contato.html">Contato</a></p>
+            </div>
+            <div>
+                <div class="footer2">
+                    <h2>Horário de atendimento</h2>
+                    <p>2ª - 6ª - 11:30 - 21:00</p>
+                    <p>Sábado: Fechado</p>
+                    <p>Domingo: Fechado</p>
+                </div>
+                <br><br>
+                <div class="footer3">
+                    <h2>Contato</h2>
+                    <p>Endereço: Av. tal, 244 - Conj E5 - Brasília - Distrito federal</p>
+                    <p>Telefone: (61) 9999-9999</p>
+                    <p>Whatsapp: (61) 99999-9999</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            let lastY = 0;
+            let isCursorOverFooter = false;
+    
+            const footer = document.getElementById('footer');
+    
+            // Detecta se o mouse está sobre o footer
+            footer.addEventListener('mouseenter', () => {
+                isCursorOverFooter = true;
+            });
+    
+            footer.addEventListener('mouseleave', () => {
+                isCursorOverFooter = false;
+            });
+    
+            document.addEventListener('mousemove', (event) => {
+                if (event.clientY > lastY && !isCursorOverFooter) {
+                    footer.classList.add('visible');
+                } else if (!isCursorOverFooter) {
+                    footer.classList.remove('visible');
+                }
+                lastY = event.clientY;
+            });
+        </script>
+    </footer>
+</body>
+</html>
