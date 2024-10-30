@@ -134,11 +134,11 @@
         footer {
             display: flex;
             justify-content: space-between;
-            bottom: -100px; /* Escondido inicialmente */
+            bottom: -300px;
             background-color: #ddaf4c;
             width: 100%;
             position: relative;
-            transition: bottom 0.3s ease;
+            transition: bottom 1.5s ease;
         }
         footer > .rodape {
             width: 80%;
@@ -173,8 +173,26 @@
             color: #fffb13;
         }
         .rodape.visible {
-            bottom: 0; /* Revela o footer */
+            bottom: 0;
         }
+        footer {
+            display: flex;
+            justify-content: center;
+            background-color: #ddaf4c;
+            padding: 20px 0;
+            width: 100%;
+            position: relative;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+        }
+        .footer1, .footer2, .footer3 {
+            flex: 1;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -219,44 +237,36 @@
     </main>
     <br><br>
     <footer class="rodape" id="footer">
-        <div>
+        <div class="footer-content">
             <div class="footer1">
                 <h2>Navegação</h2>
                 <p><a href="index.html">Página Inicial</a></p>
                 <p><a href="tratamentos.html">Tratamentos</a></p>
                 <p><a href="contato.html">Contato</a></p>
             </div>
-            <div>
-                <div class="footer2">
-                    <h2>Horário de atendimento</h2>
-                    <p>2ª - 6ª - 11:30 - 21:00</p>
-                    <p>Sábado: Fechado</p>
-                    <p>Domingo: Fechado</p>
-                </div>
-                <br><br>
-                <div class="footer3">
-                    <h2>Contato</h2>
-                    <p>Endereço: Av. tal, 244 - Conj E5 - Brasília - Distrito federal</p>
-                    <p>Telefone: (61) 9999-9999</p>
-                    <p>Whatsapp: (61) 99999-9999</p>
-                </div>
+            <div class="footer2">
+                <h2>Horário de atendimento</h2>
+                <p>2ª - 6ª - 11:30 - 21:00</p>
+                <p>Sábado: Fechado</p>
+                <p>Domingo: Fechado</p>
+            </div>
+            <div class="footer3">
+                <h2>Contato</h2>
+                <p>Endereço: Av. tal, 244 - Conj E5 - Brasília - Distrito federal</p>
+                <p>Telefone: (61) 9999-9999</p>
+                <p>Whatsapp: (61) 99999-9999</p>
             </div>
         </div>
         <script>
             let lastY = 0;
             let isCursorOverFooter = false;
-    
             const footer = document.getElementById('footer');
-    
-            // Detecta se o mouse está sobre o footer
             footer.addEventListener('mouseenter', () => {
                 isCursorOverFooter = true;
             });
-    
             footer.addEventListener('mouseleave', () => {
                 isCursorOverFooter = false;
             });
-    
             document.addEventListener('mousemove', (event) => {
                 if (event.clientY > lastY && !isCursorOverFooter) {
                     footer.classList.add('visible');
