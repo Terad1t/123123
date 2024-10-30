@@ -108,9 +108,7 @@
             color: #ddaf4c;
             text-align: center;
             padding: 10px; 
-            background-color: rgba(249, 249, 249, 0.8);
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
             animation: slide-in 1s;
@@ -216,7 +214,6 @@
             text-align: center;
             padding: 20px; 
             background-color: rgba(249, 249, 249, 0.8);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 1;
             animation: slide-in 0.5s;
@@ -254,6 +251,9 @@
             <div class="mainparte2">
                 <p>Cuide da sua autoestima e bem-estar com tratamentos de alta qualidade na "ANA ESTÉTICA AVANÇADA"</p>
             </div>
+            
+            <hr>
+
             <div>
                 <div class="icon-container">
                     <div class="icon-item">
@@ -265,6 +265,14 @@
                         <i class="fa-solid fa-heart"></i>
                         <h2>Atendimento</h2>
                         <p>O cliente é prioridade, faça seu atendimento como desejar!</p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="mainparte3">
+                    <div>
+
                     </div>
                 </div>
             </div>
@@ -280,21 +288,23 @@
                 <p><a href="tratamentos.html">Tratamentos</a></p>
                 <p><a href="contato.html">Contato</a></p>
             </div>
+
             <div class="footer2">
                 <h2>Horário de atendimento</h2>
                 <p>2ª - 6ª - 11:30 - 21:00</p>
                 <p>Sábado: Fechado</p>
                 <p>Domingo: Fechado</p>
             </div>
+
             <div class="footer3">
                 <h2>Contato</h2>
                 <p>Endereço: Av. tal, 244 - Conj E5 - Brasília - Distrito federal</p>
                 <p>Telefone: (61) 9999-9999</p>
                 <p>Whatsapp: (61) 99999-9999</p>
             </div>
+
         </div>
-        <script>\
-        
+        <script>
             //vai se foder brendan eich//
     const footer = document.getElementById('footer');
     const footerHeight = footer.offsetHeight;
@@ -302,23 +312,13 @@
 
     let isCursorOverFooter = false;
 
-    footer.addEventListener('mouseenter', () => {
-        isCursorOverFooter = true;
-    });
-
-    footer.addEventListener('mouseleave', () => {
-        isCursorOverFooter = false;
-    });
-
+    footer.addEventListener('mouseenter', () => {isCursorOverFooter = true;});
+    footer.addEventListener('mouseleave', () => {isCursorOverFooter = false;});
     document.addEventListener('mousemove', (event) => {
         const windowHeight = window.innerHeight;
         const mouseY = event.clientY;
-
-        if (mouseY > windowHeight - footerHeight - threshold && !isCursorOverFooter) {
-            footer.classList.add('visible');
-        } else if (!isCursorOverFooter) {
-            footer.classList.remove('visible');
-        }
+        if (mouseY > windowHeight - footerHeight - threshold && !isCursorOverFooter) {footer.classList.add('visible');} 
+        else if (!isCursorOverFooter) {footer.classList.remove('visible');}
     });
         </script>
     </footer>
