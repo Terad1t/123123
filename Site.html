@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estética Avançada</title>
     <style type="text/css">
-        @media (max-width: 360px) {
-        .menu_lateral
-    {
-        display: none;}
-    }
+
+    /*media*/
+    @media (max-width: 360px) {
+    .menu_lateral{display: none;}}
+    /*media*/
+
+    /*keyframes*/
         @keyframes slide-in {
             from {
                 transform: translateX(-100%);}
@@ -24,7 +26,14 @@
             to {
                 transform: translateY(0);}
         }
+        @keyframes slide-down {
+            from {
+                transform: translateY(100%);}
+            to {transform: translateY(0);}
+            }
+    /*keyframes*/
 
+    /*nem eu sei oq e isso*/
         * {
             margin: 0px;
             padding: 0px;
@@ -212,9 +221,11 @@
             z-index: 1;
             animation: slide-in 0.5s;
         }
+        /*nem eu sei oq e isso*/
     </style>
 </head>
 <body>
+    <!--Parte chatinha do trb-->
     <header>
         <div>
             <div class="parte1">
@@ -232,6 +243,7 @@
     </header>
     <hr>
     <br><br>
+    <!--Parte chata do trb-->
     <main>
         <div>
             <div class="mainparte1">
@@ -259,6 +271,7 @@
         </div>
     </main>
     <br><br>
+    <!--parte chatona do trb-->
     <footer class="rodape" id="footer">
         <div class="footer-content">
             <div class="footer1">
@@ -280,7 +293,9 @@
                 <p>Whatsapp: (61) 99999-9999</p>
             </div>
         </div>
-        <script>
+        <script>\
+        
+            //vai se foder brendan eich//
     const footer = document.getElementById('footer');
     const footerHeight = footer.offsetHeight;
     const threshold = 50;
