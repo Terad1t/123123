@@ -61,6 +61,9 @@
             border-radius: 20px;
             cursor: pointer;
             color: black;
+            position: relative;
+            z-index: 1;
+            animation: slide-up 0.5s;
         }
         .parte2 p:hover {
             padding-bottom: 2px;
@@ -138,7 +141,7 @@
             background-color: #ddaf4c;
             width: 100%;
             position: relative;
-            transition: bottom 1.5s ease;
+            transition: bottom 1s ease;
         }
         footer > .rodape {
             width: 80%;
@@ -192,7 +195,23 @@
             flex: 1;
             text-align: center;
         }
-
+        .mainparte2 {
+            position: relative;
+            height: 100px;
+            background-position: center;
+        }
+        .mainparte2 p {
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            color: black;
+            text-align: center;
+            padding: 20px; 
+            background-color: rgba(249, 249, 249, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            animation: slide-in 0.5s;
+        }
     </style>
 </head>
 <body>
@@ -211,13 +230,17 @@
             </div>
         </div>
     </header>
+    <hr>
     <br><br>
     <main>
         <div>
             <div class="mainparte1">
                 <div>
-                    <h1>"Realce sua beleza natural <br> com nossos tratamentos de <br> estética facial personalizados."</h1>
+                    <h1>Realce sua beleza natural <br> com nossos tratamentos de <br> estética facial personalizados.</h1>
                 </div>
+            </div>
+            <div class="mainparte2">
+                <p>Cuide da sua autoestima e bem-estar com tratamentos de alta qualidade na "ANA ESTÉTICA AVANÇADA"</p>
             </div>
             <div>
                 <div class="icon-container">
@@ -258,23 +281,30 @@
             </div>
         </div>
         <script>
-            let lastY = 0;
-            let isCursorOverFooter = false;
-            const footer = document.getElementById('footer');
-            footer.addEventListener('mouseenter', () => {
-                isCursorOverFooter = true;
-            });
-            footer.addEventListener('mouseleave', () => {
-                isCursorOverFooter = false;
-            });
-            document.addEventListener('mousemove', (event) => {
-                if (event.clientY > lastY && !isCursorOverFooter) {
-                    footer.classList.add('visible');
-                } else if (!isCursorOverFooter) {
-                    footer.classList.remove('visible');
-                }
-                lastY = event.clientY;
-            });
+    const footer = document.getElementById('footer');
+    const footerHeight = footer.offsetHeight;
+    const threshold = 50;
+
+    let isCursorOverFooter = false;
+
+    footer.addEventListener('mouseenter', () => {
+        isCursorOverFooter = true;
+    });
+
+    footer.addEventListener('mouseleave', () => {
+        isCursorOverFooter = false;
+    });
+
+    document.addEventListener('mousemove', (event) => {
+        const windowHeight = window.innerHeight;
+        const mouseY = event.clientY;
+
+        if (mouseY > windowHeight - footerHeight - threshold && !isCursorOverFooter) {
+            footer.classList.add('visible');
+        } else if (!isCursorOverFooter) {
+            footer.classList.remove('visible');
+        }
+    });
         </script>
     </footer>
 </body>
