@@ -10,6 +10,9 @@
     /*media*/
     @media (max-width: 360px) {
     .menu_lateral{display: none;}}
+    @media (prefers-contrast: more) {
+        hr {opacity: 1; 
+            background-color: #000;}}
     /*media*/
 
     /*keyframes*/
@@ -218,6 +221,16 @@
             z-index: 1;
             animation: slide-in 0.5s;
         }
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #333;
+            opacity: 0.6;
+            animation: slide-in 0.5s;
+        }
+        hr.gradient {
+            background: linear-gradient(to right, #333, #ccc, #333);
+        }
         /*nem eu sei oq e isso*/
     </style>
 </head>
@@ -314,12 +327,12 @@
 
     footer.addEventListener('mouseenter', () => {isCursorOverFooter = true;});
     footer.addEventListener('mouseleave', () => {isCursorOverFooter = false;});
+
     document.addEventListener('mousemove', (event) => {
         const windowHeight = window.innerHeight;
         const mouseY = event.clientY;
         if (mouseY > windowHeight - footerHeight - threshold && !isCursorOverFooter) {footer.classList.add('visible');} 
-        else if (!isCursorOverFooter) {footer.classList.remove('visible');}
-    });
+        else if (!isCursorOverFooter) {footer.classList.remove('visible');}});
         </script>
     </footer>
 </body>
