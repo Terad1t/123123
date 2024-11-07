@@ -10,9 +10,6 @@
     /*media*/
     @media (max-width: 360px) {
     .menu_lateral{display: none;}}
-    @media (prefers-contrast: more) {
-        hr {opacity: 1; 
-            background-color: #000;}}
     /*media*/
 
     /*keyframes*/
@@ -34,6 +31,10 @@
                 transform: translateY(100%);}
             to {transform: translateY(0);}
             }
+        @keyframes slide-left {
+            from {transform: translateX(100%);}
+            to {transform: translateX(0%)}
+        }
     /*keyframes*/
 
     /*nem eu sei oq e isso*/
@@ -221,15 +222,48 @@
             z-index: 1;
             animation: slide-in 0.5s;
         }
-        hr {
-            border: none;
-            height: 2px;
-            background-color: #333;
-            opacity: 0.6;
-            animation: slide-in 0.5s;
+        .mainparte3 {
+            position: relative;
+            background-color: #e9d9b7;
+            overflow: hidden;
+            height: 350px;
+            background-size: cover;
+            background-position: center;
         }
-        hr.gradient {
-            background: linear-gradient(to right, #333, #ccc, #333);
+        .mainparte3 h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 50px;
+            color: #ddaf4c;
+            text-align: right;
+            padding-right: 350px; 
+            border-radius: 5px;
+            position: relative;
+            z-index: 1;
+            animation: slide-left 1s;
+        }
+        .mainparte3 p{
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            color: black;
+            text-align: right;
+            padding-right: 350px; 
+            position: relative;
+            z-index: 1;
+            animation: slide-left 0.8s;
+        }
+        .botao-escandalizado {
+            position: relative;
+            padding: 15px 32px;
+            background-color: #ddc184;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.5s;
+        }
+        .botao-escandalizado:hover {
+            background-color: #ddaf4c; 
         }
         /*nem eu sei oq e isso*/
     </style>
@@ -264,9 +298,7 @@
             <div class="mainparte2">
                 <p>Cuide da sua autoestima e bem-estar com tratamentos de alta qualidade na "ANA ESTÉTICA AVANÇADA"</p>
             </div>
-            
             <hr>
-
             <div>
                 <div class="icon-container">
                     <div class="icon-item">
@@ -280,14 +312,22 @@
                         <p>O cliente é prioridade, faça seu atendimento como desejar!</p>
                     </div>
                 </div>
-
+                <br><br>
                 <hr>
-
                 <div class="mainparte3">
                     <div>
-
+                        <div>
+                            <img src="" alt="fotinha">
+                        </div>
+                        <div class="pp1-container">
+                            <h1>Seja bem-vindo à clínica<br> Estética Avançada</h1> <br>
+                            <p> Conheça nossos tratamentos! <br> Permita-se uma experiência transformadora em estética facial e corporal, <br>
+                                personalizada para o seu bem-estar e cuidado com o seu corpo.</p> <br>
+                            <input type="button" value="Sobre os tratamentos" class="botao-escandalizado">
+                        </div>
                     </div>
                 </div>
+                <hr>
             </div>
         </div>
     </main>
@@ -315,7 +355,6 @@
                 <p>Telefone: (61) 9999-9999</p>
                 <p>Whatsapp: (61) 99999-9999</p>
             </div>
-
         </div>
         <script>
             //vai se foder brendan eich//
@@ -327,12 +366,13 @@
 
     footer.addEventListener('mouseenter', () => {isCursorOverFooter = true;});
     footer.addEventListener('mouseleave', () => {isCursorOverFooter = false;});
-
     document.addEventListener('mousemove', (event) => {
         const windowHeight = window.innerHeight;
         const mouseY = event.clientY;
         if (mouseY > windowHeight - footerHeight - threshold && !isCursorOverFooter) {footer.classList.add('visible');} 
-        else if (!isCursorOverFooter) {footer.classList.remove('visible');}});
+        else if (!isCursorOverFooter) {footer.classList.remove('visible');}
+    });
+
         </script>
     </footer>
 </body>
